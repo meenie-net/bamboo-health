@@ -1,3 +1,4 @@
+import { addDynamicIconSelectors } from "@iconify/tailwind";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,11 +16,15 @@ const config: Config = {
       },
     },
     screens: {
-      phone: "0px",
-      tablet: "640px",
-      desktop: "880px",
+      max_22d5: { max: "22.5rem" },
+      max_30: { max: "30rem" },
+      max_40: { max: "40rem" },
+      max_55: { max: "55rem" },
     },
   },
-  plugins: [],
+  plugins: [
+    // Iconify plugin
+    addDynamicIconSelectors(),
+  ],
 };
 export default config;

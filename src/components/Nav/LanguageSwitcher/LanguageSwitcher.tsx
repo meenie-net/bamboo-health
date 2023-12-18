@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
     setShow(false);
   });
   return (
-    <div className="relative cursor-pointer mx-3">
+    <div className="relative cursor-pointer mx-6">
       {/* selected */}
       <div
         className="w-[70px] h-[45px] border rounded-xl flex justify-between items-center relative p-2"
@@ -52,7 +52,7 @@ const LanguageSwitcher = () => {
       </div>
       {/* options */}
       <div
-        className={`absolute top-[50px] left-0 transition-all border bg-white ${
+        className={`absolute top-[50px] left-0 rounded-xl text-sm overflow-hidden transition-all border bg-white z-50 ${
           show ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
