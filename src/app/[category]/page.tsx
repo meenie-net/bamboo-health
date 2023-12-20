@@ -1,20 +1,29 @@
 "use client";
 import Nav from "@/components/Nav/Nav";
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { notFound, usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useEffect } from "react";
+import { resetAnswer } from "@/store/modules/quizQuestion/quizSlice";
 
 const QuizByCategory = () => {
   const router = useRouter();
   const pathName = usePathname();
+  const dispatch = useAppDispatch();
 
   const quizCategory = useAppSelector((state) =>
-    state.appInit.quizCategory.find((cate) => cate.url === pathName)
+    state.appInit.quizs.find((cate) => "/" + cate.category === pathName)
   );
   if (!quizCategory) notFound();
   const handleClickGender = (gender: string) => {
-    router.push(pathName.split("/")[1] + "/quiz/1");
+    router.push(pathName + "/quiz/1");
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetAnswer());
+    };
+  });
   return (
     <div>
       <Nav />

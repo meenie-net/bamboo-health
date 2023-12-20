@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/mdi-light": "^1.1.10",
     "@iconify/tailwind": "^0.1.4",
     "@reduxjs/toolkit": "^2.0.1",
     "next": "14.0.4",

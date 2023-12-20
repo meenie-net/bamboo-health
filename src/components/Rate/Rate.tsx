@@ -2,7 +2,7 @@ import React from "react";
 
 const Rate = (props: { rate: number }) => {
   return (
-    <div className="flex gap-2 my-4">
+    <div className="flex gap-2">
       {Array.from(new Array(props.rate)).map((v, i) => (
         <svg
           key={i}

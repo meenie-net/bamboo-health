@@ -2,23 +2,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: {
-  quizCategory: { url: string; img: string; title: string; desc: string }[];
+  quizs: {
+    category: TQuizCategory;
+    img: string;
+    title: string;
+    desc: string;
+  }[];
 } = {
-  quizCategory: [
+  quizs: [
     {
-      url: "/stressAnxiety",
+      category: "stressAnxiety",
       img: "/images/stress_anxiety.webp",
       title: "Stress / anxiety",
       desc: "Don’t allow stress to control your life",
     },
     {
-      url: "/adhd",
+      category: "adhd",
       img: "/images/adhd.webp",
       desc: "It’s time to achieve your full potential",
       title: "ADHD",
     },
     {
-      url: "/procrastination",
+      category: "procrastination",
       img: "/images/procrastination.webp",
       desc: "Quit procrastinating – reap the rewards",
       title: "Procrastination",

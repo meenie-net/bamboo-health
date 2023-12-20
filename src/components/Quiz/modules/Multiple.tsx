@@ -1,19 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import RectangleMultipleOption from "./MultipleOption/RectangleMultipleOption";
 import { useAppSelector } from "@/store/hooks";
-import SquareMultipleOption from "./MultipleOption/SquareMultipleOption";
+import RectangleOption from "../Options/RectangleOption";
+import SquareOption from "../Options/SquareOption";
 
 const RectangleMultiple = (props: {
+  sharp: "rectangle" | "square";
   question: TQuestion;
   onNext: () => void;
   category: TQuizCategory;
 }) => {
-  const { question, onNext, category } = props;
-  const allowContinue: boolean = useAppSelector(
-    (state) => state.quiz[category]["answers"][question.name].length > 0
-  );
+  const { sharp, question, onNext, category } = props;
+  const allowContinue: boolean = useAppSelector((state) => {
+    return state.quiz[category].answers![question.name!].length > 0;
+  });
   const handleNext = () => {
     allowContinue && onNext();
   };
@@ -28,32 +29,30 @@ const RectangleMultiple = (props: {
       <div className="text-[rgb(134,134,219)] text-[0.875rem] font-normal tracking-[-0.02rem] mt-10">
         Choose as many or few options as you like
       </div>
-      <div className="w-full grid columns-2 grid-cols-2 gap-2 mt-4">
-        {question.options.map((v, k) => {
-          switch (question.type) {
-            case "rectangleMultiple":
-              return (
-                <RectangleMultipleOption
-                  key={k}
-                  option={v}
-                  questionName={question.name}
-                  category={category}
-                />
-              );
-            case "squareMultiple":
-              return (
-                <SquareMultipleOption
-                  key={k}
-                  option={v}
-                  questionName={question.name}
-                  category={category}
-                />
-              );
-            default:
-              break;
-          }
-        })}
-      </div>
+      {sharp === "rectangle" && (
+        <div className="w-full grid columns-2 grid-cols-2 gap-2 mt-4">
+          {question.options!.map((v, k) => (
+            <RectangleOption
+              key={k}
+              option={v}
+              questionName={question.name!}
+              category={category}
+            />
+          ))}
+        </div>
+      )}
+      {sharp === "square" && (
+        <div className="w-full flex flex-wrap justify-center gap-4 mt-4">
+          {question.options!.map((v, k) => (
+            <SquareOption
+              key={k}
+              option={v}
+              questionName={question.name!}
+              category={category}
+            />
+          ))}
+        </div>
+      )}
       <button
         className={`w-[22rem] mt-4 rounded-lg text-base font-semibold tracking-[-0.02rem] py-2 px-6 min-h-[3rem] ${
           allowContinue
