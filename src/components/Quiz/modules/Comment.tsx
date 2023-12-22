@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Rate from "@/components/Rate/Rate";
+import Button from "@/components/Button/Button";
 
 const RectangleMultiple = (props: {
   question: TQuestion;
@@ -35,12 +36,12 @@ const RectangleMultiple = (props: {
         className="text-sm text-center color-[rgb(107,114,128)] tracking-tight"
         dangerouslySetInnerHTML={{ __html: question.payload!.content }}
       ></div>
-      <button
-        className="w-[22rem] mt-4 rounded-lg text-base font-semibold tracking-[-0.02rem] py-2 px-6 min-h-[3rem] bg-[rgb(0,193,183)] text-white cursor-pointer"
+      <Button
+        width={"22rem"}
+        enable={true}
+        content="Continue"
         onClick={handleNext}
-      >
-        Continue
-      </button>
+      />
     </div>
   );
 };

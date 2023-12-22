@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/Button/Button";
 
 const PlainText = (props: { question: TQuestion; onNext: () => void }) => {
   const { question, onNext } = props;
@@ -21,12 +22,12 @@ const PlainText = (props: { question: TQuestion; onNext: () => void }) => {
       <div className="mt-4 text-lg text-center">
         {question.payload!.content}
       </div>
-      <button
-        className="w-[22rem] mt-6 rounded-lg text-base font-semibold tracking-[-0.02rem] py-2 px-6 min-h-[3rem] bg-[rgb(0,193,183)] text-white cursor-pointer"
+      <Button
+        enable={true}
+        width={"22rem"}
+        content="Continue"
         onClick={handleNext}
-      >
-        Continue
-      </button>
+      />
     </div>
   );
 };

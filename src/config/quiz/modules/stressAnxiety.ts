@@ -101,5 +101,18 @@ export const stressAnxiety: {
           "Stress had pretty much taken over my life at one point. I was waking up feeling tired, dreading what was to come. I think I was just ignoring the signs for a while – but looking back they were all there. The tiredness, the lack of sleep, the constant feeling of being on edge.<br/><br/>Thankfully, I discovered Sensa, and since then, I’m entirely on the road to recovery. It didn’t change my life overnight, nothing can – what it did do, however, is give me the tools I needed to start working on myself and understand why I felt like I did.<br/><br/>Sensa also taught me how to keep focused on the here and now; even when I’m in a bad mood, it’s a great reminder to be centered and present.",
       },
     },
+    {
+      type: "oneColumnArrow",
+      label:
+        "Do you find it challenging to maintain relationships with colleagues or friends?",
+      img: "/images/bean_in_heart.webp",
+      options: [
+        { label: "Very much so", score: 1 },
+        { label: "It depends on my mood", score: 1 },
+        { label: "Sometimes, but not often", score: 1 },
+        { label: "Rarely", score: 1 },
+        { label: "I never struggle with this", score: 1 },
+      ],
+    },
   ],
 };

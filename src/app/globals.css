@@ -30,6 +30,13 @@ body {
   overflow-x: hidden;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 100rem inset;
+  -webkit-text-fill-color: inherit;
+}
+
 @layer components {
   .hover-shadow {
     box-shadow: rgb(0, 193, 183) 0px 0px 0px 2px,

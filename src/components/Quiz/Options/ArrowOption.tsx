@@ -27,13 +27,13 @@ const ArrowOption = (props: {
   };
   return (
     <div
-      className={`flex justify-between gap-6 p-4 rounded-xl bg-white items-center cursor-pointer ${
+      className={`flex justify-between gap-6 p-4 rounded-xl bg-white items-center cursor-pointer hover:bg-[rgb(249,250,251)] hover:shadow-[rgba(0,0,0,0.07)_0px_4px_6px] ${
         answer.includes(option) ? "hover-shadow" : "option-shadow"
       }`}
       onClick={handleCheck}
     >
       <label className="select-none text-base font-medium">{option}</label>
-      <span className="icon-[ic--baseline-arrow-forward]"></span>
+      <span className="icon-[ic--baseline-arrow-forward] text-[rgb(0,193,183)]"></span>
     </div>
   );
 };

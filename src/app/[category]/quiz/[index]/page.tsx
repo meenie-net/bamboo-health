@@ -7,6 +7,7 @@ import { useAppSelector } from "@/store/hooks";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import HomeFooter from "@/components/HomeFooter/HomeFooter";
+import Button from "@/components/Button/Button";
 
 const Quiz = ({ params }: { params: { category: string } }) => {
   const pathName = usePathname();
@@ -36,6 +37,10 @@ const Quiz = ({ params }: { params: { category: string } }) => {
   const Error = () => {
     return (
       <>
+        <div>Error</div>
+        <div>
+          <Button enable onClick={() => router.push("/")} content="Home" />
+        </div>
         {/* Footer */}
         <HomeFooter />
       </>
@@ -65,6 +70,15 @@ const Quiz = ({ params }: { params: { category: string } }) => {
         return (
           <Single
             column="two"
+            question={question}
+            onNext={handleNext}
+            category={category}
+          />
+        );
+      case "oneColumnArrow":
+        return (
+          <Single
+            column="one"
             question={question}
             onNext={handleNext}
             category={category}

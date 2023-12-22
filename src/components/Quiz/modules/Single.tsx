@@ -18,19 +18,16 @@ const RectangleMultiple = (props: {
     allowContinue && onNext();
   };
   return (
-    <div className="w-[46rem] flex flex-col items-center">
+    <div className="w-[46rem] flex flex-col items-center py-8">
       <div>
         <Image src={question.img} alt="" width={160} height={160} />
       </div>
-      <div className="max-w-[34rem] font-semibold text-[2rem] leading-10">
+      <div className="max-w-[34rem] font-semibold text-[2rem] leading-10 text-center">
         {question.label}
       </div>
-      <div className="text-[rgb(134,134,219)] text-[0.875rem] font-normal tracking-[-0.02rem] mt-10">
-        Choose as many or few options as you like
-      </div>
       {column === "one" && (
-        <div className="w-full grid columns-2 grid-cols-2 gap-2 mt-4">
-          {question.options.map((v, k) => (
+        <div className="w-[22rem] grid columns-1 grid-cols-1 gap-2 py-6">
+          {question.options!.map((v, k) => (
             <ArrowOption
               key={k}
               option={v.label}
@@ -42,8 +39,8 @@ const RectangleMultiple = (props: {
         </div>
       )}
       {column === "two" && (
-        <div className="w-full grid columns-2 grid-cols-2 gap-2 mt-4">
-          {question.options.map((v, k) => (
+        <div className="w-full grid columns-2 grid-cols-2 gap-2 py-6">
+          {question.options!.map((v, k) => (
             <ArrowOption
               key={k}
               option={v.label}
