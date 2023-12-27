@@ -1,16 +1,17 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Button from "@/components/Button/Button";
 
 const QuizConfirm = () => {
   const router = useRouter();
+  const path = usePathname();
   const handleNext = () => {
-    router.push("");
+    router.push("/" + path.split("/")[1] + "/email");
   };
   return (
-    <div className="w-full flex flex-col items-center justify-center p-8 bg-[linear-gradient(rgba(229,249,248,0)_0%,rgb(229,249,248)_100%)]">
+    <div className="w-full h-[calc(100vh-65px)] flex flex-col items-center justify-center p-8 bg-[linear-gradient(rgba(229,249,248,0)_0%,rgb(229,249,248)_100%)]">
       <div>
         <Image
           src="/images/bean_in_heart.webp"

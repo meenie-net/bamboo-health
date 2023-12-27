@@ -6,8 +6,7 @@ import Comment from "@/components/Quiz/modules/Comment";
 import { useAppSelector } from "@/store/hooks";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
-import HomeFooter from "@/components/HomeFooter/HomeFooter";
-import Button from "@/components/Button/Button";
+import Error from "@/components/Error/Error";
 
 const Quiz = ({ params }: { params: { category: string } }) => {
   const pathName = usePathname();
@@ -32,19 +31,6 @@ const Quiz = ({ params }: { params: { category: string } }) => {
         router.push(pathSplitArr.join("/"));
       }
     }
-  };
-
-  const Error = () => {
-    return (
-      <>
-        <div>Error</div>
-        <div>
-          <Button enable onClick={() => router.push("/")} content="Home" />
-        </div>
-        {/* Footer */}
-        <HomeFooter />
-      </>
-    );
   };
   if (answers!.hasOwnProperty(question.name!)) {
     switch (question.type) {

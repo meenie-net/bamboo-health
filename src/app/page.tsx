@@ -1,10 +1,10 @@
 "use client";
 import HomeFooter from "@/components/HomeFooter/HomeFooter";
-import HomeSlider from "@/components/HomeSlider/HomeSlider";
 import Nav from "@/components/Nav/Nav";
 import { useAppSelector } from "@/store/hooks";
 import Image from "next/image";
 import Link from "next/link";
+import CardCarousel from "@/components/CardCarousel/CardCarousel";
 
 export default function Home() {
   const quizCategorys = useAppSelector((state) => state.appInit.quizs);
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="text-base text-center py-4">
             Hear how Sensa has improved the lives of these users:
           </div>
-          <HomeSlider />
+          <CardCarousel />
         </div>
       </div>
       {/* Introduction-2 */}

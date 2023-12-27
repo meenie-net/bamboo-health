@@ -2,7 +2,7 @@
 import React, { MouseEvent, useEffect, useState } from "react";
 import Rate from "../Rate/Rate";
 
-const HomeSlider = () => {
+const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemWidth, setItemWidth] = useState(window.innerWidth / 3);
   const [dotsShow, setDotsShow] = useState(false);
@@ -131,4 +131,4 @@ const HomeSlider = () => {
   );
 };
 
-export default HomeSlider;
+export default CardCarousel;

@@ -1,19 +1,25 @@
 "use client";
 import React, { useState } from "react";
 
-const CheckButton = (props: { checked: boolean }) => {
-  const { checked } = props;
+const CheckButton = (props: {
+  checked: boolean;
+  onChange: (value: boolean) => void;
+}) => {
+  const { checked, onChange } = props;
+  const handleClick = () => {
+    onChange(!checked);
+  };
   return (
-    <button className={`w-5 h-5 rounded`}>
+    <button className={`h-5 w-5 rounded`} onClick={handleClick}>
       <span
-        className={`w-5 h-5 rounded block ${
+        className={`block h-5 w-5 rounded ${
           checked
             ? "bg-[rgb(0,193,183)]"
             : "bg-slate-100 shadow-[rgb(209,213,219)_0px_0px_0px_1px_inset]"
         }`}
       >
         <span
-          className={`text-white text-lg ${
+          className={`text-lg text-white ${
             checked ? "icon-[ic--baseline-check]" : ""
           }`}
         ></span>

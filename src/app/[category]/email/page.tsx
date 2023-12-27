@@ -41,7 +41,7 @@ const Email = () => {
       </nav>
       <div className="mt-10">
         {/* content */}
-        <div className="max-w-[74rem] mx-auto px-8 flex justify-between py-8">
+        <div className="max-w-[74rem] h-[calc(100vh-65px)] mx-auto px-8 flex justify-between py-8 items-center">
           <div className="max-w-[22rem]">
             <div className="text-[2rem] leading-10 text-[rgb(17,24,39)] font-semibold">
               Enter your email
@@ -115,28 +115,27 @@ const Email = () => {
           <div className="w-[30rem] relative">
             <Image
               src={"/images/bean_in_heart.webp"}
-              fill
+              width={1000}
+              height={0}
+              className="w-full h-auto"
               alt=""
-              sizes="contain"
-              priority
             />
           </div>
         </div>
-        {/* footer */}
-        <div className="max-w-[74rem] text-center mx-auto px-8">
-          {/* Tips */}
-          <div className="text-xs font-light">
-            Disclaimer: Results may vary due to individual differences. In
-            addition, mental self-help apps like Sensa are not a replacement for
-            or a form of therapy, nor are they intended to cure, treat, or
-            diagnose medical conditions, including psychiatric conditions.
-            Please consult a qualified health care provider for a medical
-            treatment plan.
-          </div>
-          {/* Copyright */}
-          <div className="text-xs font-light my-8">
-            © 2023 Sensa. All rights reserved.
-          </div>
+      </div>
+      {/* footer */}
+      <div className="max-w-[74rem] text-center mx-auto px-8">
+        {/* Tips */}
+        <div className="text-xs font-light">
+          Disclaimer: Results may vary due to individual differences. In
+          addition, mental self-help apps like Sensa are not a replacement for
+          or a form of therapy, nor are they intended to cure, treat, or
+          diagnose medical conditions, including psychiatric conditions. Please
+          consult a qualified health care provider for a medical treatment plan.
+        </div>
+        {/* Copyright */}
+        <div className="text-xs font-light my-8">
+          © 2023 Sensa. All rights reserved.
         </div>
       </div>
     </div>
