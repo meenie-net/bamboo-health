@@ -13,7 +13,7 @@ const RectangleMultiple = (props: {
     onNext();
   };
   return (
-    <div className="w-[38rem] flex flex-col items-center my-8 p-8">
+    <div className="my-8 flex w-[38rem] flex-col items-center p-8">
       {/* info */}
       <div className="font-medium">{question.payload!.userInfo}</div>
       {/* rate */}
@@ -22,18 +22,18 @@ const RectangleMultiple = (props: {
       </div>
       {/* Verified buyer */}
       <div className="flex items-center gap-1">
-        <span className="w-[20px] h-[20px] flex justify-center items-center rounded-full bg-[rgb(0,193,183)]">
-          <span className="text-white icon-[ic--baseline-check]"></span>
+        <span className="flex h-[20px] w-[20px] items-center justify-center rounded-full bg-[rgb(0,193,183)]">
+          <span className="icon-[ic--baseline-check] text-white"></span>
         </span>
         <span className="text-[0.875rem] leading-6">Verified buyer</span>
       </div>
       {/* label */}
-      <div className="max-w-[34rem] font-semibold text-[2rem] my-6 leading-10 text-center">
+      <div className="my-6 max-w-[34rem] text-center text-[2rem] font-semibold leading-10">
         {question.label}
       </div>
       {/* content */}
       <div
-        className="text-sm text-center color-[rgb(107,114,128)] tracking-tight"
+        className="color-[rgb(107,114,128)] mb-4 text-center text-sm tracking-tight"
         dangerouslySetInnerHTML={{ __html: question.payload!.content }}
       ></div>
       <Button

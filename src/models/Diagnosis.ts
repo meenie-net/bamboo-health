@@ -6,8 +6,6 @@ const diagnosisSchema = new Schema(
   {
     _id: {
       type: String,
-      unique: true,
-      require: true,
     },
     email: {
       type: String,
@@ -22,7 +20,7 @@ const diagnosisSchema = new Schema(
       default: 0,
     },
   },
-  { timestamps: true },
+  { _id: true, timestamps: true },
 );
 
 export default mongoose.models["Diagnosis"] ||

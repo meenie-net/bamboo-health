@@ -1,10 +1,10 @@
 "use client";
-import Nav from "@/components/Nav/Nav";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { notFound, usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect } from "react";
 import { resetAnswer } from "@/store/modules/quizQuestion/quizSlice";
+import Nav from "@/components/Nav/Nav";
 
 const QuizByCategory = () => {
   const router = useRouter();
@@ -12,7 +12,7 @@ const QuizByCategory = () => {
   const dispatch = useAppDispatch();
 
   const quizCategory = useAppSelector((state) =>
-    state.appInit.quizs.find((cate) => "/" + cate.category === pathName)
+    state.appInit.quizs.find((cate) => "/" + cate.category === pathName),
   );
   if (!quizCategory) notFound();
   const handleClickGender = (gender: string) => {
@@ -28,29 +28,29 @@ const QuizByCategory = () => {
     <div>
       <Nav />
       {quizCategory && (
-        <div className="flex max-w-[74rem] min-h-[calc(100vh+65px)] mx-auto items-center px-8">
+        <div className="mx-auto flex min-h-[calc(100vh+65px)] max-w-[74rem] items-center px-8">
           <div className="w-[34rem]">
-            <div className="text-[2.5rem] leading-[3rem] text-[rgb(17,24,39)] font-extrabold">
+            <div className="text-[2.5rem] font-extrabold leading-[3rem] text-[rgb(17,24,39)]">
               {quizCategory.desc}
             </div>
-            <div className="mt-8 mb-6 font-semibold tracking-tight text-[rgb(17,24,39)]">
+            <div className="mb-6 mt-8 font-semibold tracking-tight text-[rgb(17,24,39)]">
               Let’s start simply – how do you identify?
             </div>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex flex-wrap gap-4">
               <button
-                className="min-w-[9rem] outline-none rounded-lg border-none transition-all text-base leading-6 tracking-tight px-6 py-2 min-h-[3rem] bg-[rgb(115,115,220)] text-white shadow-[rgba(134,134,219,0.2)_0px_16px_32px] hover:shadow-none"
+                className="min-h-[3rem] min-w-[9rem] rounded-lg border-none bg-[rgb(115,115,220)] px-6 py-2 text-base leading-6 tracking-tight text-white shadow-[rgba(134,134,219,0.2)_0px_16px_32px] outline-none transition-all hover:shadow-none"
                 onClick={() => handleClickGender("male")}
               >
                 Male
               </button>
               <button
-                className="min-w-[9rem] outline-none rounded-lg border-none transition-all text-base leading-6 tracking-tight px-6 py-2 min-h-[3rem] bg-[rgb(0,193,183)] text-white shadow-[rgba(134,134,219,0.2)_0px_16px_32px] hover:shadow-none"
+                className="min-h-[3rem] min-w-[9rem] rounded-lg border-none bg-[rgb(0,193,183)] px-6 py-2 text-base leading-6 tracking-tight text-white shadow-[rgba(134,134,219,0.2)_0px_16px_32px] outline-none transition-all hover:shadow-none"
                 onClick={() => handleClickGender("female")}
               >
                 Female
               </button>
               <button
-                className="min-w-[9rem] outline-none rounded-lg border-none transition-all text-base leading-6 tracking-tight px-6 py-2 min-h-[3rem] bg-white text-[rgb(115,115,220)] shadow-[rgba(134,134,219,0.2)_0px_16px_32px] hover:shadow-none"
+                className="min-h-[3rem] min-w-[9rem] rounded-lg border-none bg-white px-6 py-2 text-base leading-6 tracking-tight text-[rgb(115,115,220)] shadow-[rgba(134,134,219,0.2)_0px_16px_32px] outline-none transition-all hover:shadow-none"
                 onClick={() => handleClickGender("other")}
               >
                 Other
@@ -63,12 +63,12 @@ const QuizByCategory = () => {
               alt=""
               width={544}
               height={0}
-              className="max-w-full h-auto"
+              className="h-auto max-w-full"
             />
           </div>
         </div>
-      )}
-      <div className="max-w-[74rem] text-center mx-auto px-8">
+      )}{" "}
+      <div className="mx-auto max-w-[74rem] px-8 text-center">
         {/* Tips */}
         <div className="text-xs font-light">
           Disclaimer: Results may vary due to individual differences. In
