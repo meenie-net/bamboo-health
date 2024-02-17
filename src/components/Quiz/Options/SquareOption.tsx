@@ -13,7 +13,7 @@ const SquareOption = (props: {
   const { option, questionName, category } = props;
   const dispatch = useDispatch();
   const answer: Array<any> = useAppSelector(
-    (state) => state.quiz[category].answers![questionName]
+    (state) => state.quiz[category].answers![questionName],
   );
   const handleCheck = () => {
     dispatch(
@@ -21,18 +21,17 @@ const SquareOption = (props: {
         category,
         name: questionName,
         value: option,
-      })
+      }),
     );
   };
   return (
     <div
-      className={`w-[10rem] flex flex-col flex-wrap relative py-4 px-2 rounded-xl bg-white items-center cursor-pointer ${
+      className={`relative flex w-[10rem] cursor-pointer flex-col flex-wrap items-center rounded-xl bg-white px-2 py-4 ${
         answer.includes(option) ? "hover-shadow" : "option-shadow"
       }`}
-      onClick={handleCheck}
     >
-      <div className="absolute top-[0.625rem] left-[0.625rem]">
-        <CheckButton checked={answer.includes(option)} />
+      <div className="absolute left-[0.625rem] top-[0.625rem]">
+        <CheckButton checked={answer.includes(option)} onChange={handleCheck} />
       </div>
       <Image alt="" src={option.img!} width={120} height={120} />
       <h5 className="select-none text-center text-base font-medium">
