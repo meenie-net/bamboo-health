@@ -4,7 +4,7 @@ import Rate from "../Rate/Rate";
 
 const CardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemWidth, setItemWidth] = useState(window.innerWidth / 3);
+  const [itemWidth, setItemWidth] = useState(400);
   const [dotsShow, setDotsShow] = useState(false);
   const [newX, setNewX] = useState(0);
   const [oldX, setOldX] = useState(0);
@@ -100,12 +100,12 @@ const CardCarousel = () => {
             <div
               key={k}
               style={{ width: itemWidth }}
-              className="bg-white p-6 rounded-2xl mr-4 shadow-lg overflow-hidden flex-shrink-0 select-none cursor-pointer"
+              className="mr-4 flex-shrink-0 cursor-pointer select-none overflow-hidden rounded-2xl bg-white p-6 shadow-lg"
             >
               {/* info */}
               <div>
                 <div className="text-sm font-bold">Ellie F,25</div>
-                <div className="text-xs my-2">Brighton,UK</div>
+                <div className="my-2 text-xs">Brighton,UK</div>
               </div>
               {/* rate */}
               <Rate rate={5} />
